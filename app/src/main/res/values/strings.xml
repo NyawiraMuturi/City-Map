@@ -1,7 +1,19 @@
 <resources>
+
+    //landing page
     <string name="app_name">City guide</string>
     <string name="logo_name">Njia</string>
     <string name="slogan_name">Find your way anywhere</string>
-    <string name="catch_phrase">Use Njia</string>
+    <string name="catch_phrase">Powered by Dame-Techie</string>
+
+    //slides
+    <string name="search">Search for Your Location</string>
+    <string name="call">Make A Call</string>
+    <string name="missing">Add Missing Places</string>
+    <string name="start">Explore!!!</string>
+
+
+
+
 
 </resources>
