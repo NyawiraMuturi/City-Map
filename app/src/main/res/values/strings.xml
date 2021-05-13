@@ -13,5 +13,11 @@
     <string name="start">Explore!!!</string>
     <string name="Button">Let's Get Started</string>
 
+    //Slides description
+    <string name="searchD">New place? DO not get lost. Use Njia to help you find your way around. Your personal tour guide in your hands.</string>
+    <string name="callD">We have the best customer care service and contacts to the coolest places. Need some help? we got your back.</string>
+    <string name="missingD">It is not unlikely that you will find a hidden gem out on these streets. Add it up and find it the next time round.</string>
+    <string name="explore">Your all set up. Buckle find out what this place has to offer. Enjoy. </string>
+
 
 </resources>
