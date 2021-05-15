@@ -5,7 +5,9 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.text.Html;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.nyawira.cityguide.HelperClasses.SliderAdapter;
 import com.nyawira.cityguide.R;
@@ -13,8 +15,10 @@ import com.nyawira.cityguide.R;
 public class OnBoarding extends AppCompatActivity {
 
     ViewPager viewPager;
-    LinearLayout dots;
+    LinearLayout dotsLayout;
     SliderAdapter sliderAdapter;
+    TextView[] dots;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,10 +26,24 @@ public class OnBoarding extends AppCompatActivity {
         setContentView(R.layout.activity_on_boarding);
 
         viewPager = findViewById(R.id.slider);
-        dots = findViewById(R.id.dots);
+        dotsLayout = findViewById(R.id.dots);
 
         sliderAdapter =new SliderAdapter(this);
 
         viewPager.setAdapter(sliderAdapter);
+
+        addDots();
+    }
+
+    private void addDots(){
+        dots = new TextView[4];
+
+        for(int i=0; i<dots.length; i++){
+            dots[i] = new TextView(this);
+            dots[i].setText(Html.fromHtml("&#8226;"));
+            dots[i].setTextSize(35);
+            dots[i].setTextColor(Integer.parseInt("#000000"));
+            dotsLayout.addView(dots[i]);
+        }
     }
 }
