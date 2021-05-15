@@ -9,6 +9,8 @@ import android.text.Html;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -23,6 +25,7 @@ public class OnBoarding extends AppCompatActivity {
     SliderAdapter sliderAdapter;
     TextView[] dots;
     Button getStarted, next;
+    Animation animation;
 
 
     @Override
@@ -81,6 +84,8 @@ public class OnBoarding extends AppCompatActivity {
                 getStarted.setVisibility(View.INVISIBLE);
             }
             else {
+                animation = AnimationUtils.loadAnimation(OnBoarding.this, R.anim.bottom_anim);
+                getStarted.setAnimation(animation);
                 getStarted.setVisibility(View.VISIBLE);
             }
         }
