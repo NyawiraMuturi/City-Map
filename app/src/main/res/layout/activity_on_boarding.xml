@@ -31,7 +31,8 @@
             android:id="@+id/getStarted"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Button"/>
+            android:text="@string/Button"
+            android:visibility="invisible"/>
 
         <LinearLayout
             android:id="@+id/dots"

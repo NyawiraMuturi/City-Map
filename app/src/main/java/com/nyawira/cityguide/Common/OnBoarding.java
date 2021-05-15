@@ -6,6 +6,10 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 import android.text.Html;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -18,15 +22,19 @@ public class OnBoarding extends AppCompatActivity {
     LinearLayout dotsLayout;
     SliderAdapter sliderAdapter;
     TextView[] dots;
+    Button getStarted, next;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_on_boarding);
 
         viewPager = findViewById(R.id.slider);
         dotsLayout = findViewById(R.id.dots);
+        getStarted =findViewById(R.id.getStarted);
 
         sliderAdapter =new SliderAdapter(this);
 
@@ -62,6 +70,19 @@ public class OnBoarding extends AppCompatActivity {
         @Override
         public void onPageSelected(int position) {
             addDots(position);
+
+            if (position == 0){
+                getStarted.setVisibility(View.INVISIBLE);
+            }
+            else if (position == 1){
+                getStarted.setVisibility(View.INVISIBLE);
+            }
+            else if (position == 2){
+                getStarted.setVisibility(View.INVISIBLE);
+            }
+            else {
+                getStarted.setVisibility(View.VISIBLE);
+            }
         }
 
         @Override
