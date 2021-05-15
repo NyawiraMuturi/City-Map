@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 
 import com.nyawira.cityguide.HelperClasses.SliderAdapter;
 import com.nyawira.cityguide.R;
+import com.nyawira.cityguide.User.UserDashboard;
 
 public class OnBoarding extends AppCompatActivity {
 
@@ -24,8 +26,9 @@ public class OnBoarding extends AppCompatActivity {
     LinearLayout dotsLayout;
     SliderAdapter sliderAdapter;
     TextView[] dots;
-    Button getStarted, next;
+    Button getStarted, next, skipButton;
     Animation animation;
+    int currentPosition;
 
 
     @Override
@@ -38,6 +41,8 @@ public class OnBoarding extends AppCompatActivity {
         viewPager = findViewById(R.id.slider);
         dotsLayout = findViewById(R.id.dots);
         getStarted =findViewById(R.id.getStarted);
+        skipButton = findViewById(R.id.skipButton);
+        next = findViewById(R.id.next);
 
         sliderAdapter =new SliderAdapter(this);
 
@@ -46,6 +51,13 @@ public class OnBoarding extends AppCompatActivity {
         addDots(0);
 
         viewPager.addOnPageChangeListener(changeListener);
+    }
+
+    public void skip (View view) {
+        startActivity(new Intent(this, UserDashboard.class));
+    }
+    public void next (View view) {
+        viewPager.setCurrentItem(currentPosition + 1);
     }
 
     private void addDots(int position){
@@ -73,6 +85,7 @@ public class OnBoarding extends AppCompatActivity {
         @Override
         public void onPageSelected(int position) {
             addDots(position);
+            currentPosition = position;
 
             if (position == 0){
                 getStarted.setVisibility(View.INVISIBLE);
