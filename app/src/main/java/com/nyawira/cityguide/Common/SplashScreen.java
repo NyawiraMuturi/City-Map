@@ -3,6 +3,7 @@ package com.nyawira.cityguide.Common;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Animatable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -24,6 +25,7 @@ public class SplashScreen extends AppCompatActivity {
     ImageView landing;
     TextView slogan, sloganName, catchPhrase;
     Animation sideAnim;
+    SharedPreferences onBoarding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +48,23 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashScreen.this, OnBoarding.class);
-                startActivity(intent);
+
+                onBoarding = getSharedPreferences("onBoardingScreen", MODE_PRIVATE);
+
+                boolean isFirstTIme = onBoarding.getBoolean("firstTIme", true);
+
+                if (isFirstTIme){
+
+                    SharedPreferences.Editor editor = onBoarding.edit();
+                    editor.putBoolean("firstTime", false);
+                    editor.commit();
+                    Intent intent = new Intent(SplashScreen.this, OnBoarding.class);
+                    startActivity(intent);
+                }
+                else{
+                    Intent intent = new Intent(SplashScreen.this, UserDashboard.class);
+                    startActivity(intent);
+                }
                 finish();
             }
         },SPLASH_TIMER);
