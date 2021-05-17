@@ -22,6 +22,10 @@
 
     //User Dashboard
     <string name="searchText">Search...</string>
+    <string name="restaurant">Restaurant</string>
+    <string name="hospital">Hospital</string>
+    <string name="shops">Shops</string>
+    <string name="airPorts">Airports</string>
 
 
 </resources>
