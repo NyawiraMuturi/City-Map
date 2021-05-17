@@ -20,5 +20,8 @@
     <string name="missingD">It is not unlikely that you will find a hidden gem out on these streets. Add it up and find it the next time round.</string>
     <string name="explore">Your all set up. Buckle find out what this place has to offer. Enjoy. </string>
 
+    //User Dashboard
+    <string name="searchText">Search...</string>
+
 
 </resources>
