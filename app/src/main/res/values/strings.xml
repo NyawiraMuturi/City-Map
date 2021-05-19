@@ -26,6 +26,8 @@
     <string name="hospital">Hospital</string>
     <string name="shops">Shops</string>
     <string name="airPorts">Airports</string>
+    <string name="featured">FEATURED LOCATIONS</string>
+    <string name="featuredDes">Here are some of the most popular places around you. Explore...</string>
 
 
 </resources>
