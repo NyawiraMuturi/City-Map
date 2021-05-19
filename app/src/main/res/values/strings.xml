@@ -28,6 +28,8 @@
     <string name="airPorts">Airports</string>
     <string name="featured">FEATURED LOCATIONS</string>
     <string name="featuredDes">Here are some of the most popular places around you. Explore...</string>
+    <string name="popular">Most Visited Places</string>
+    <string name="view">View All</string>
 
 
 </resources>
