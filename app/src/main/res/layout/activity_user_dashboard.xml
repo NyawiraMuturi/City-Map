@@ -233,6 +233,7 @@
                 </LinearLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/featured"
                     android:layout_width="match_parent"
                     android:layout_height="280dp"
                     android:layout_toRightOf="@+id/staticCard"/>
@@ -270,6 +271,7 @@
                 </RelativeLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/popular"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"/>
 
@@ -306,6 +308,7 @@
                 </RelativeLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/categories"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"/>
 
