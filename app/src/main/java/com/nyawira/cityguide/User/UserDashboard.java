@@ -8,12 +8,17 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.nyawira.cityguide.HelperClasses.HomeAdapter.FeaturedAdapter;
+import com.nyawira.cityguide.HelperClasses.HomeAdapter.FeaturedHelperClass;
 import com.nyawira.cityguide.R;
+
+import java.util.ArrayList;
 
 public class UserDashboard extends AppCompatActivity {
 
     //variables
     RecyclerView featured, popular, category;
+    RecyclerView.Adapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,5 +39,14 @@ public class UserDashboard extends AppCompatActivity {
 
         featured.setHasFixedSize(true);
         featured.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+        ArrayList<FeaturedHelperClass> featuredLocations = new ArrayList<>();
+
+        featuredLocations.add(new FeaturedHelperClass(R.drawable.java, "Java-Kimathi Street", "jhuvjdhfu isueri icoirnce surnbce ncxjhdsbci iufhfviur"));
+        featuredLocations.add(new FeaturedHelperClass(R.drawable.forest, "Karura Forest", "jhuvjdhfu isueri icoirnce surnbce ncxjhdsbci iufhfviur"));
+        featuredLocations.add(new FeaturedHelperClass(R.drawable.club, "Klub One", "jhuvjdhfu isueri icoirnce surnbce ncxjhdsbci iufhfviur"));
+
+        adapter = new FeaturedAdapter(featuredLocations);
+        featured.setAdapter(adapter);
     }
 }

@@ -40,7 +40,7 @@ public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.Featur
 
     @Override
     public int getItemCount() {
-        return 0;
+        return featuredLocations.size();
     }
 
     public static class FeaturedViewHolder extends RecyclerView.ViewHolder {
