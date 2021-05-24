@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.nyawira.cityguide.HelperClasses.HomeAdapter.CategoriesAdapter;
+import com.nyawira.cityguide.HelperClasses.HomeAdapter.CategoriesHelperClass;
 import com.nyawira.cityguide.HelperClasses.HomeAdapter.FeaturedAdapter;
 import com.nyawira.cityguide.HelperClasses.HomeAdapter.FeaturedHelperClass;
 import com.nyawira.cityguide.R;
@@ -54,5 +56,13 @@ public class UserDashboard extends AppCompatActivity {
     private void categoryRecycler() {
         category.setHasFixedSize(true);
         category.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+        ArrayList<CategoriesHelperClass> categoryLocation = new ArrayList<>();
+        categoryLocation.add(new CategoriesHelperClass("Restaurants", R.drawable.restaurant));
+        categoryLocation.add(new CategoriesHelperClass("Airports", R.drawable.airport));
+        categoryLocation.add(new CategoriesHelperClass("Hospitals", R.drawable.hospital));
+
+        adapter = new CategoriesAdapter(categoryLocation);
+        category.setAdapter(adapter);
     }
 }
