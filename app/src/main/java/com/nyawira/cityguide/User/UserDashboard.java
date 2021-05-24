@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class UserDashboard extends AppCompatActivity {
 
     //variables
-    RecyclerView featured, popular, category;
+    RecyclerView featured, category;
     RecyclerView.Adapter adapter;
 
     @Override
@@ -29,11 +29,12 @@ public class UserDashboard extends AppCompatActivity {
 
         //hooks
         featured = findViewById(R.id.featured);
-        popular = findViewById(R.id.popular);
         category = findViewById(R.id.categories);
 
         featuredRecycler();
+        categoryRecycler();
     }
+
 
     private void featuredRecycler() {
 
@@ -48,5 +49,10 @@ public class UserDashboard extends AppCompatActivity {
 
         adapter = new FeaturedAdapter(featuredLocations);
         featured.setAdapter(adapter);
+    }
+
+    private void categoryRecycler() {
+        category.setHasFixedSize(true);
+        category.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
     }
 }

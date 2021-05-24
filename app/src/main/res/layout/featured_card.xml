@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="160dp"
-    android:layout_height="300dp"
+    android:layout_height="290dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="4dp"
     app:cardElevation="8dp"
@@ -36,8 +36,7 @@
             android:layout_height="wrap_content"
             style="@style/Widget.AppCompat.RatingBar.Small"
             android:rating="2.5"
-            android:padding="5dp"
-            android:layout_marginStart="10dp"/>
+            android:layout_marginStart="15dp"/>
 
         <TextView
             android:id="@+id/review"

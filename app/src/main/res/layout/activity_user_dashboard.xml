@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".User.UserDashboard"
     android:orientation="vertical"
-    android:background="#F3E5F5">
+    android:background="@color/white">
 
     <RelativeLayout
         android:id="@+id/topBar"
@@ -210,7 +210,7 @@
                     android:id="@+id/staticCard"
                     android:layout_width="170dp"
                     android:layout_height="280dp"
-                    android:background="@color/purple"
+                    android:background="#F3E5F5"
                     android:layout_margin="10dp"
                     android:orientation="vertical">
 
@@ -235,47 +235,10 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/featured"
                     android:layout_width="match_parent"
-                    android:layout_height="280dp"
+                    android:layout_height="300dp"
                     android:layout_toRightOf="@+id/staticCard"/>
 
             </RelativeLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
-                android:orientation="vertical">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/popular"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textAllCaps="true"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/view"
-                        android:layout_alignParentEnd="true"
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        android:layout_centerVertical="true"/>
-
-                </RelativeLayout>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/popular"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"/>
-
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -303,6 +266,8 @@
                         android:layout_alignParentEnd="true"
                         android:textSize="12sp"
                         android:textStyle="bold"
+                        android:textAllCaps="true"
+                        android:layout_marginRight="5dp"
                         android:layout_centerVertical="true"/>
 
                 </RelativeLayout>
