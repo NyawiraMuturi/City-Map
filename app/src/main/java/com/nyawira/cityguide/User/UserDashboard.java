@@ -1,13 +1,17 @@
 package com.nyawira.cityguide.User;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.google.android.material.navigation.NavigationView;
 import com.nyawira.cityguide.HelperClasses.HomeAdapter.CategoriesAdapter;
 import com.nyawira.cityguide.HelperClasses.HomeAdapter.CategoriesHelperClass;
 import com.nyawira.cityguide.HelperClasses.HomeAdapter.FeaturedAdapter;
@@ -16,11 +20,13 @@ import com.nyawira.cityguide.R;
 
 import java.util.ArrayList;
 
-public class UserDashboard extends AppCompatActivity {
+public class UserDashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     //variables
     RecyclerView featured, category;
     RecyclerView.Adapter adapter;
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +38,12 @@ public class UserDashboard extends AppCompatActivity {
         //hooks
         featured = findViewById(R.id.featured);
         category = findViewById(R.id.categories);
+        drawerLayout = findViewById(R.id.drawerLayout);
+        navigationView = findViewById(R.id.nav_view);
+
+        //Navigation Drawer
+        navigationView.bringToFront();
+        navigationView.setNavigationItemSelectedListener(this);
 
         featuredRecycler();
         categoryRecycler();
@@ -64,5 +76,10 @@ public class UserDashboard extends AppCompatActivity {
 
         adapter = new CategoriesAdapter(categoryLocation);
         category.setAdapter(adapter);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return false;
     }
 }

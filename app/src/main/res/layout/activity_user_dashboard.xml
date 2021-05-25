@@ -225,7 +225,7 @@
                     <LinearLayout
                         android:id="@+id/staticCard"
                         android:layout_width="170dp"
-                        android:layout_height="280dp"
+                        android:layout_height="300dp"
                         android:background="#F3E5F5"
                         android:layout_margin="10dp"
                         android:orientation="vertical">
@@ -251,7 +251,7 @@
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/featured"
                         android:layout_width="match_parent"
-                        android:layout_height="300dp"
+                        android:layout_height="310dp"
                         android:layout_toRightOf="@+id/staticCard"/>
 
                 </RelativeLayout>
@@ -291,7 +291,7 @@
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/categories"
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"/>
+                        android:layout_height="wrap_content"/>
 
                 </LinearLayout>
 
