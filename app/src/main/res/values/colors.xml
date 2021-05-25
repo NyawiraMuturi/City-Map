@@ -9,4 +9,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="card">#B2DFDB</color>
     <color name="purple">#D1C4E9</color>
+
+    <style name="navigationTheme">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorControlHighlight">@color/black</item>
+    </style>
 </resources>

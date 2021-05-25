@@ -2,14 +2,17 @@ package com.nyawira.cityguide.User;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
 import com.google.android.material.navigation.NavigationView;
 import com.nyawira.cityguide.HelperClasses.HomeAdapter.CategoriesAdapter;
@@ -27,6 +30,7 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
     RecyclerView.Adapter adapter;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+    ImageView menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +44,26 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
         category = findViewById(R.id.categories);
         drawerLayout = findViewById(R.id.drawerLayout);
         navigationView = findViewById(R.id.nav_view);
-
-        //Navigation Drawer
-        navigationView.bringToFront();
-        navigationView.setNavigationItemSelectedListener(this);
+        menu = findViewById(R.id.menuIcon);
 
         featuredRecycler();
         categoryRecycler();
+        navigationDrawer();
+    }
+
+    private void navigationDrawer() {
+        navigationView.bringToFront();
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.nav_home);
+
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (drawerLayout.isDrawerVisible(GravityCompat.START))
+                    drawerLayout.closeDrawer(GravityCompat.START);
+                else drawerLayout.openDrawer(GravityCompat.START);
+            }
+        });
     }
 
 
@@ -80,6 +97,6 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return false;
+        return true;
     }
 }
