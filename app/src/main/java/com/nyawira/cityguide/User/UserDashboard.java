@@ -51,6 +51,7 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
         navigationDrawer();
     }
 
+    //Navigation Functions
     private void navigationDrawer() {
         navigationView.bringToFront();
         navigationView.setNavigationItemSelectedListener(this);
@@ -65,8 +66,19 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
             }
         });
     }
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerVisible(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else
+            super.onBackPressed();
+    }
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return true;
+    }
 
-
+   //RecyclerView Functions
     private void featuredRecycler() {
 
         featured.setHasFixedSize(true);
@@ -81,7 +93,6 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
         adapter = new FeaturedAdapter(featuredLocations);
         featured.setAdapter(adapter);
     }
-
     private void categoryRecycler() {
         category.setHasFixedSize(true);
         category.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
@@ -95,8 +106,4 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
         category.setAdapter(adapter);
     }
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return true;
-    }
 }
