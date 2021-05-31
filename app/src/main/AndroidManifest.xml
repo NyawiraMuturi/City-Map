@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CityGuide">
-        <activity android:name=".Common.LoginSignUp.RetailerLanding"></activity>
+        <activity android:name=".Common.LoginSignUp.SignUpActivity"></activity>
+        <activity android:name=".Common.LoginSignUp.LoginActivity" />
+        <activity android:name=".Common.LoginSignUp.RetailerLanding" />
         <activity android:name=".User.AllCategories" />
         <activity android:name=".Common.OnBoarding" />
         <activity android:name=".User.UserDashboard" />

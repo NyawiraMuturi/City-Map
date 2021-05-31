@@ -38,8 +38,8 @@
     <string name="login">Login</string>
     <string name="sign_up">Sign Up</string>
     <string name="work">How Njia Works</string>
-
-
+    <string name="retailer">Username/Email</string>
+    <string name="pass">Password</string>
 
 
 </resources>
