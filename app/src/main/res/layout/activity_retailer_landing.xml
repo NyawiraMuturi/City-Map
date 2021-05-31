@@ -47,19 +47,24 @@
             android:layout_marginTop="15dp">
 
             <Button
+                android:id="@+id/loginBtn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAllCaps="true"
                 android:text="@string/login"
-                android:layout_marginRight="10dp"/>
+                android:onClick="callLogin"
+                android:transitionName="loginTransition"
+                android:layout_marginEnd="10dp"/>
             <Button
+                android:id="@+id/signUpBtn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAllCaps="true"
                 android:text="@string/sign_up"
-                android:layout_marginLeft="10dp"/>
+                android:onClick="callSignUp"
+                android:layout_marginStart="10dp"/>
         </LinearLayout>
 
         <Button
