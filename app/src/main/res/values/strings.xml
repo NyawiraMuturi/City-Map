@@ -32,5 +32,14 @@
     <string name="view">View All</string>
     <string name="categories">Categories</string>
 
+    //Retailers
+    <string name="landing">Grow Your Business</string>
+    <string name="landingD">Boost your online presence. Reach more people, sell more.</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="work">How Njia Works</string>
+
+
+
 
 </resources>
