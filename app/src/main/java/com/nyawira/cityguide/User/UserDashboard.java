@@ -16,6 +16,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.google.android.material.navigation.NavigationView;
+import com.nyawira.cityguide.Common.LoginSignUp.RetailerLanding;
 import com.nyawira.cityguide.HelperClasses.HomeAdapter.CategoriesAdapter;
 import com.nyawira.cityguide.HelperClasses.HomeAdapter.CategoriesHelperClass;
 import com.nyawira.cityguide.HelperClasses.HomeAdapter.FeaturedAdapter;
@@ -51,6 +52,7 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
         categoryRecycler();
         navigationDrawer();
     }
+
 
     //Navigation Functions
     private void navigationDrawer() {
@@ -110,6 +112,10 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
 
         adapter = new CategoriesAdapter(categoryLocation);
         category.setAdapter(adapter);
+    }
+
+    public void retailerDashboard(View view) {
+        startActivity(new Intent(getApplicationContext(), RetailerLanding.class));
     }
 
 }
