@@ -40,6 +40,9 @@
     <string name="work">How Njia Works</string>
     <string name="retailer">Username/Email</string>
     <string name="pass">Password</string>
+    <string name="forgotPass">Forgot Password?</string>
+    <string name="rem">Remember me</string>
+    <string name="newAcc">create account</string>
 
 
 </resources>
