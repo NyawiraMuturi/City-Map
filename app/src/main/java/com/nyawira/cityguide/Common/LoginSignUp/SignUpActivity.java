@@ -2,7 +2,10 @@ package com.nyawira.cityguide.Common.LoginSignUp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActivityOptions;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Pair;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -38,6 +41,14 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void callNextScreen (View view){
+        Intent intent = new Intent(getApplicationContext(), BirthDate.class);
+        //Transition
+        Pair[] pairs = new Pair[2];
 
+        pairs[0] = new Pair<View, String>(nextBtn, "transitionNextBtn");
+        pairs[1] = new Pair<View, String>(loginBtn, "loginTransition");
+
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUpActivity.this, pairs);
+        startActivity(intent, options.toBundle());
     }
 }
