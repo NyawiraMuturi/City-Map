@@ -43,6 +43,11 @@
     <string name="forgotPass">Forgot Password?</string>
     <string name="rem">Remember me</string>
     <string name="newAcc">create account</string>
+    <string name="Name">Full Name</string>
+    <string name="uName">User Name</string>
+    <string name="uEmail">Email</string>
+    <string name="uPhone">Phone Number</string>
+    <string name="next">Next</string>
 
 
 </resources>

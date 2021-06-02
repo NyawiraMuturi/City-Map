@@ -67,7 +67,8 @@
                 app:boxStrokeWidthFocused="2dp"
                 app:startIconDrawable="@drawable/password"
                 app:startIconTint="@color/black"
-                app:endIconMode="password_toggle"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/black"
                 app:endIconTint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
