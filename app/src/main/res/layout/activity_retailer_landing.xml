@@ -64,6 +64,7 @@
                 android:textAllCaps="true"
                 android:text="@string/sign_up"
                 android:onClick="callSignUp"
+                android:transitionName="transitionSignUp"
                 android:layout_marginStart="10dp"/>
         </LinearLayout>
 
