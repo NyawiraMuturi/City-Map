@@ -48,6 +48,8 @@
     <string name="uEmail">Email</string>
     <string name="uPhone">Phone Number</string>
     <string name="next">Next</string>
+    <string name="Gender">Choose Gender</string>
+    <string name="Age">Select Age</string>
 
 
 </resources>
