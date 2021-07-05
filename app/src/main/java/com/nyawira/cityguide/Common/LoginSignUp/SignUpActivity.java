@@ -43,12 +43,21 @@ public class SignUpActivity extends AppCompatActivity {
     public void callNextScreen (View view){
         Intent intent = new Intent(getApplicationContext(), BirthDate.class);
         //Transition
-        Pair[] pairs = new Pair[2];
+        Pair[] pairs = new Pair[1];
 
         pairs[0] = new Pair<View, String>(nextBtn, "transitionNextBtn");
-        pairs[1] = new Pair<View, String>(loginBtn, "loginTransition");
 
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUpActivity.this, pairs);
         startActivity(intent, options.toBundle());
+    }
+    public void callLogin(View view){
+        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+
+        Pair[] pairs = new Pair[1];
+        pairs[0] = new Pair<View, String>(loginBtn, "loginTransition");
+
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUpActivity.this, pairs);
+        startActivity(intent, options.toBundle());
+
     }
 }

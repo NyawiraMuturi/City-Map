@@ -95,6 +95,7 @@
             android:layout_height="wrap_content"
             android:text="@string/next"
             android:layout_marginTop="15dp"
+            android:onClick="callNext"
             android:elevation="8dp"
             android:transitionName="transitionNextBtn"/>
 

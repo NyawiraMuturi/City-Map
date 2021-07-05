@@ -50,6 +50,21 @@
     <string name="next">Next</string>
     <string name="Gender">Choose Gender</string>
     <string name="Age">Select Age</string>
+    <string name="title_activity_otp">OTP</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+    //OTP Verification
+    <string name="otpText">Code</string>
+    <string name="otpVerification">Verification</string>
+    <string name="otpDescription">Enter one time password sent to phone number</string>
+
 
 
 </resources>

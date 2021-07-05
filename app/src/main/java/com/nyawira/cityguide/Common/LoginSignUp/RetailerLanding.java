@@ -30,11 +30,18 @@ public class RetailerLanding extends AppCompatActivity {
     public void callLogin(View view){
         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
         Pair[] pairs = new Pair[1];
+
         pairs[0] = new Pair<View, String>(login, "loginTransition");
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(RetailerLanding.this, pairs);
         startActivity(intent, options.toBundle());
     }
     public void callSignUp(View view){
+        Intent intent = new Intent(getApplicationContext(), SignUpActivity.class);
+        Pair[] pairs = new Pair[1];
+
+        pairs[0] = new Pair<View, String>(signUp, "transitionSignUp");
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(RetailerLanding.this, pairs);
+        startActivity(intent, options.toBundle());
 
     }
 }

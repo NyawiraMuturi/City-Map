@@ -139,6 +139,7 @@
             android:layout_height="wrap_content"
             android:text="@string/login"
             android:layout_marginTop="15dp"
+            android:onClick="callLogin"
             android:background="#00000000"
             android:transitionName="loginTransition"/>
     </LinearLayout>
