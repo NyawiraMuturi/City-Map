@@ -67,6 +67,7 @@
     <string name="entPass">Enter your email address</string>
     <string name="select">Make Selection</string>
     <string name="selectAcc">Select method to change your password details.</string>
+    <string name="passUpdate">Your Password has been Updated</string>
 
 
 </resources>
