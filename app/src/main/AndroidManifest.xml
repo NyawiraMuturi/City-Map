@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CityGuide">
-        <activity android:name=".Common.LoginSignUp.Selection"></activity>
+        <activity android:name=".Common.LoginSignUp.SetNewPassword"></activity>
+        <activity android:name=".Common.LoginSignUp.Selection" />
         <activity android:name=".Common.LoginSignUp.ForgotPassword" />
         <activity android:name=".Common.LoginSignUp.VerifyOTP" />
         <activity
