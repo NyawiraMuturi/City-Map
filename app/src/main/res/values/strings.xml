@@ -64,7 +64,9 @@
     <string name="otpText">Code</string>
     <string name="otpVerification">Verification</string>
     <string name="otpDescription">Enter one time password sent to phone number</string>
-
+    <string name="entPass">Enter your email address</string>
+    <string name="select">Make Selection</string>
+    <string name="selectAcc">Select method to change your password details.</string>
 
 
 </resources>
