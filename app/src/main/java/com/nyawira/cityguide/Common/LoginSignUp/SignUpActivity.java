@@ -81,4 +81,26 @@ public class SignUpActivity extends AppCompatActivity {
             return true;
         }
     }
+
+    private boolean validateUserName() {
+        String val = userName.getEditText().getText().toString().trim();
+        String checkSpaces = "\\A\\w{1,20}\\z";
+
+        if (val.isEmpty()) {
+            userName.setError("Fill in userName");
+            return false;
+        } else if (val.length() > 20) {
+            userName.setError("Username is too long");
+            return false;
+        } else if (!val.matches(checkSpaces)) {
+            userName.setError("spaces not allowed");
+            return false;
+        } else {
+            userName.setError(null);
+            userName.setErrorEnabled(false);
+            return true;
+        }
+    }
+
+
 }
