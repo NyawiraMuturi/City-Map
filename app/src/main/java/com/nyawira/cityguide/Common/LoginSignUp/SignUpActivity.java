@@ -102,5 +102,20 @@ public class SignUpActivity extends AppCompatActivity {
         }
     }
 
+    private boolean validateUserEmail() {
+        String val = userEmail.getEditText().getText().toString().trim();
+        String checkEmail = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
+        if (val.isEmpty()) {
+            userEmail.setError("Fill in Email");
+            return false;
+        }  else if (!val.matches(checkEmail)) {
+            userEmail.setError("Invalid Email!");
+            return false;
+        } else {
+            userEmail.setError(null);
+            userEmail.setErrorEnabled(false);
+            return true;
+        }
+    }
 }
