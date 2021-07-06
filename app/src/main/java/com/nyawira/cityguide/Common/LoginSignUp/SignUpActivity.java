@@ -48,6 +48,10 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void callNextScreen(View view) {
+
+        if(!validateFullName() | !validateUserName() | !validateUserEmail() | !validateUserPassword()){
+            return;
+        }
         Intent intent = new Intent(getApplicationContext(), BirthDate.class);
         //Transition
         Pair[] pairs = new Pair[1];
@@ -115,6 +119,23 @@ public class SignUpActivity extends AppCompatActivity {
         } else {
             userEmail.setError(null);
             userEmail.setErrorEnabled(false);
+            return true;
+        }
+    }
+
+    private boolean validateUserPassword() {
+        String val = userPassword.getEditText().getText().toString().trim();
+        String checkPassword = "(?=.*[a-zA-z])" +"(?=.*[@#$%^&=+])" + "(?=\\S+$)" + ".{4,}" + "$";
+
+        if (val.isEmpty()) {
+            userPassword.setError("Enter Password");
+            return false;
+        }  else if (!val.matches(checkPassword)) {
+            userPassword.setError("Password should contain 4 characters");
+            return false;
+        } else {
+            userPassword.setError(null);
+            userPassword.setErrorEnabled(false);
             return true;
         }
     }
