@@ -12,6 +12,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.google.android.material.textfield.TextInputLayout;
 import com.nyawira.cityguide.R;
 
 public class SignUpActivity extends AppCompatActivity {
@@ -19,6 +20,7 @@ public class SignUpActivity extends AppCompatActivity {
     //variables
     ImageView backButton;
     Button nextBtn, loginBtn;
+    TextInputLayout fullName, userName, userEmail, userPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,11 @@ public class SignUpActivity extends AppCompatActivity {
         backButton = findViewById(R.id.backBtn);
         nextBtn = findViewById(R.id.nextBtn);
         loginBtn = findViewById(R.id.login);
+        fullName = findViewById(R.id.fullName);
+        userName = findViewById(R.id.userName);
+        userEmail = findViewById(R.id.userEmail);
+        userPassword = findViewById(R.id.userPassword);
+
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,7 +47,7 @@ public class SignUpActivity extends AppCompatActivity {
         });
     }
 
-    public void callNextScreen (View view){
+    public void callNextScreen(View view) {
         Intent intent = new Intent(getApplicationContext(), BirthDate.class);
         //Transition
         Pair[] pairs = new Pair[1];
@@ -50,7 +57,8 @@ public class SignUpActivity extends AppCompatActivity {
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUpActivity.this, pairs);
         startActivity(intent, options.toBundle());
     }
-    public void callLogin(View view){
+
+    public void callLogin(View view) {
         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
 
         Pair[] pairs = new Pair[1];
@@ -59,5 +67,18 @@ public class SignUpActivity extends AppCompatActivity {
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUpActivity.this, pairs);
         startActivity(intent, options.toBundle());
 
+    }
+
+    private boolean validateFullName() {
+        String val = fullName.getEditText().getText().toString().trim();
+
+        if (val.isEmpty()) {
+            fullName.setError("Fill in full name");
+            return false;
+        } else {
+            fullName.setError(null);
+            fullName.setErrorEnabled(false);
+            return true;
+        }
     }
 }
